@@ -3,7 +3,7 @@
 /**
  * swap_int - swap values
  * @a: first int
- * @b; secound int
+ * @b: secound int
  * Return:void
  */
 void swap_int(int *a, int *b)
