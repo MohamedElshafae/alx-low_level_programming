@@ -9,5 +9,11 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	return (strcat(dest, src));
+	int length = strlen(src);
+	int i;
+
+	for (i = 0; i < length; i++)
+		dest += src[i];
+	dest += '\0';
+	return (dest);
 }
