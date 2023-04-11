@@ -10,9 +10,9 @@
 char *_strdup(char *str)
 {
 	int i;
-	char *ptr = malloc(sizeof(char) * strlen(str));
+	char *ptr = malloc(sizeof(char) * strlen(str) + 1);
 
-	if (ptr == NULL)
+	if (ptr == NULL || str == NULL)
 		return (NULL);
 	for (i = 0; i < (int)strlen(str); i++)
 		ptr[i] = str[i];
