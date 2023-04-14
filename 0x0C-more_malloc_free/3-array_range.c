@@ -9,3 +9,20 @@
  * Return: pointer to the array
  */
 int *array_range(int min, int max)
+{
+	int i, count = 0;
+	int *ptr;
+
+	if (min > max)
+		return (NULL);
+	ptr = malloc(sizeof(int) * (max - min) + 4);
+	
+	if (ptr == NULL)
+		return (NULL);
+	for (i = min; i <= max; i++)
+	{
+		ptr[i] = count;
+		count++;
+	}
+	return (ptr);
+}
