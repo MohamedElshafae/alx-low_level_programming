@@ -1,12 +1,6 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_mul(int a, int b);
-int op_mod(int a, int b);
-
 /**
  * op_add - summition
  * @a:first integer
@@ -19,7 +13,7 @@ int op_add(int a, int b)
 }
 
 /**
- * op_sup - sub
+ * op_sub - sub
  * @a:first integer
  * @b:secound integer
  * Return: sub of of two
@@ -41,7 +35,7 @@ int op_mul(int a, int b)
 }
 
 /**
-* op_add - div
+* op_div - div
 * @a:first integer
 * @b:secound integer
 * Return: div of of two
@@ -52,7 +46,7 @@ int op_div(int a, int b)
 }
 
 /**
-* op_add - mod
+* op_mod - mod
 * @a:first integer
 * @b:secound integer
 * Return: mod of of two
