@@ -11,10 +11,10 @@ int sum_them_all(const unsigned int n, ...)
 	va_list ptr;
 	int sum, i;
 
-	va_start(prt, n);
+	va_start(ptr, n);
 	sum = 0;
 	for (i = 0; i < (int)n; i++)
-		sum += va_args(ptr, n);
-	va_end(ptr, n);
+		sum += va_arg(ptr, int);
+	va_end(ptr);
 	return (sum);
 }
