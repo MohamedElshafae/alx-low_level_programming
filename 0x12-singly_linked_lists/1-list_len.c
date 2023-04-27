@@ -17,6 +17,5 @@ size_t list_len(const list_t *h)
 		p = p->next;
 		len++;
 	}
-	printf("-> %d elements\n", (int)len);
 	return (len);
 }
