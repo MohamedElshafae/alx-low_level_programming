@@ -1,23 +1,20 @@
 #include "lists.h"
 
 /**
- * add_node_end - add node at end
+ * add_nodeint_end - add node at end
  * @head:LinkedList
- * @str:string
+ * @n:integer
  * Return:the address of the new element, or NULL if it failed
  */
-list_t *add_node_end(list_t **head, const char *str)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	list_t *newNode = malloc(sizeof(list_t));
-	struct list_s *p = *head;
+	listint_t *newNode = malloc(sizeof(listint_t));
+	listint_t *p = *head;
 
 	if (!newNode)
 		return (NULL);
-	if (str)
-	{
-		newNode->str = strdup(str);
-		newNode->len = strlen(str);
-		newNode->next = NULL;
+	newNode->n = n;
+	newNode->next = NULL;
 		if (!p)
 		{
 			*head = newNode;
@@ -30,7 +27,6 @@ list_t *add_node_end(list_t **head, const char *str)
 			p->next = newNode;
 			return (newNode);
 		}
-	}
 	free(newNode);
 	return (NULL);
 }
