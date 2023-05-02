@@ -2,11 +2,11 @@
 #include <string.h>
 
 /**
- * print_listint - print length
+ * listint_len - print length
  * @h:the List
  * Return:length
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	const listint_t *p;
 	size_t len = 0;
@@ -14,7 +14,6 @@ size_t print_listint(const listint_t *h)
 	p = h;
 	while (p != NULL)
 	{
-		printf("%d\n", p->n);
 		p = p->next;
 		len++;
 	}
