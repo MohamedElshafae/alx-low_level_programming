@@ -216,21 +216,26 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	shash_node_t *ptr;
-	int flag;
+	unsigned long int i;
+	hash_node_t *cur, *next;
 
 	if (!ht)
 		return;
-	ptr = ht->stail;
-	flag = 0;
-	putchar('{');
-	while (ptr)
+	for (i = 0; i < ht->size; i++)
 	{
-		if (flag)
-			printf(", ");
-		printf("'%s': '%s'", ptr->key, ptr->value);
-		ptr = ptr->sprev;
-		flag = 1;
+		if (ht->array[i] != NULL)
+		{
+			cur = ht->array[i];
+			while (cur)
+			{
+				next = cur->next;
+				free(cur->key);
+				free(cur->value);
+				free(cur);
+				cur = next;
+			}
+		}
 	}
-	printf("}\n");
+	free(ht->array);
+	free(ht);
 }
