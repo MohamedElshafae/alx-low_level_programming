@@ -184,6 +184,32 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
+ * shash_table_print_rev - prints sorted hash table in revers order.
+ * @ht:hash table
+ * Return:void
+ */
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *ptr;
+	int flag;
+
+	if (!ht)
+		return;
+	ptr = ht->stail;
+	flag = 0;
+
+	putchar('{');
+	while (ptr)
+	{
+		if (flag)
+			printf(", ");
+		printf("'%s': '%s'", ptr->key, ptr->value);
+		ptr = ptr->sprev;
+		flag = 1;
+	}
+	printf("}\n");
+}
+/**
  * shash_table_delete - delete hash table
  * @ht:hash table
  * Return:void
