@@ -217,7 +217,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	unsigned long int i;
-	hash_node_t *cur, *next;
+	shash_node_t *cur, *next;
 
 	if (!ht)
 		return;
