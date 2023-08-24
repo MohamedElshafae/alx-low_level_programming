@@ -6,11 +6,12 @@ RM = rm -f
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
 oclean:
 	$(RM) $(OBJ)
-fclean:
-	$(RM) $(NAME) *~ 
 clean:
+	$(RM) $(NAME) *~ 
+fclean:
 	$(RM) $(NAME) $(OBJ) *~ 
 re:
 	fclean
