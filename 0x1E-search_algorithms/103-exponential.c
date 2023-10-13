@@ -1,6 +1,5 @@
 #include "search_algos.h"
 
-int binary(int *array, int value, int left, int right);
 void print_arr(int *array, int start, int end);
 /**
 * exponential_search -	function that searches for a value in
@@ -29,18 +28,17 @@ int exponential_search(int *array, size_t size, int value)
 	if (index >= (int)size)
 		index = (int)size - 1;
 	printf("Value found between indexes [%d] and [%d]\n", prev, index);
-	return (binary(array, value, prev, index));
+	return (binary_search(array + prev, index - prev + 1, value));
 }
 /**
-* binary -	function that searches for a value in
+* binary_search - function that searches for a value in
 * an array of integers using the binary search algorithm
 * @array: array of integers
-* @left: start of an array
-* @right: end of an array
+* @size: size of array
 * @value: value that i searched in array
 * Return: return the index of value, and if it doesn't exist return -1
 */
-int binary(int *array, int value, int left, int right)
+int binary_search(int *array, size_t value, int value)
 {
 	while (left <= right)
 	{
